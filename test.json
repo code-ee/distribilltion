@@ -1,0 +1,16 @@
+{
+	"incomes" : {
+		"Cody" : 3200,
+		"Ally" : 1300
+	},
+	"bills" : {
+		"rent" : 1000,
+		"groceries" : 300,
+		"savings" : 200,
+		"phone" : 100,
+		"credit" : 100,
+		"furniture" : 100,
+		"insurance" : 65,
+		"studentLoans" : 111
+	}
+}
