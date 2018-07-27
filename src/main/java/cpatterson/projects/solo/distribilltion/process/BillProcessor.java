@@ -21,7 +21,22 @@ public class BillProcessor {
 	}
 	
 	public void run() {
-		System.out.println("This worked so far!");
+		System.out.println("Before:");
+		System.out.println(this.toString());
+		for (Payer p : this.people) {
+			System.out.println(p.toString());
+		}
+		
+		for (Payer p : this.people) {
+			p.setBalance(p.getBalance() - (this.totalBills * p.getRatio()));
+		}
+		
+		System.out.println("After:");
+		System.out.println(this.toString());
+		for (Payer p : this.people) {
+			System.out.println(p.toString());
+		}
+		
 	}
 	
 	public double calculateTotal(JSONObject jsonObject) {
@@ -49,4 +64,10 @@ public class BillProcessor {
 		return payers;
 	}
 
+	@Override
+	public String toString() {
+		return "BillProcessor [totalBills=" + totalBills + ", totalIncome=" + totalIncome + "]";
+	}
+
+	
 }

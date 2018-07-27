@@ -24,14 +24,6 @@ public class Payer {
 		this.name = name;
 	}
 
-	public void subtractFromBalance(double ammount) {
-		this.balance -= ammount;
-	}
-	
-	public void addToBalance(double ammount) {
-		this.balance += ammount;
-	}
-
 	public double getBalance() {
 		return balance;
 	}
