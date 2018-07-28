@@ -42,6 +42,6 @@ public class Payer {
 
 	@Override
 	public String toString() {
-		return "Payer [balance=" + balance + ", ratio=" + ratio + "]";
+		return "Payer [name=" + name + ", balance=" + balance + ", ratio=" + ratio + "]";
 	}
 }

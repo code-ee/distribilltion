@@ -21,22 +21,20 @@ public class BillProcessor {
 	}
 	
 	public void run() {
-		System.out.println("Before:");
-		System.out.println(this.toString());
-		for (Payer p : this.people) {
-			System.out.println(p.toString());
-		}
-		
+		System.out.println("\nIf you want to keep what you made after paying bills:");
 		for (Payer p : this.people) {
 			p.setBalance(p.getBalance() - (this.totalBills * p.getRatio()));
+			System.out.println("Put $" + String.format("%.2f", p.getBalance()) + " into " + p.getName() + "'s account.");
 		}
 		
-		System.out.println("After:");
-		System.out.println(this.toString());
+		System.out.println("\nIf you want to half what is left after paying bills:");
+		double sharedBalance = (this.totalIncome - this.totalBills) / this.people.size();
 		for (Payer p : this.people) {
-			System.out.println(p.toString());
+			p.setBalance(p.getBalance() - (this.totalBills * p.getRatio()));
+			System.out.println("Put $" + String.format("%.2f", sharedBalance) + " into " + p.getName() + "'s account.");
 		}
 		
+		System.out.println("\nThe rest goes towards all your bills.");
 	}
 	
 	public double calculateTotal(JSONObject jsonObject) {
